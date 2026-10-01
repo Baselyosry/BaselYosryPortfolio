@@ -1,5 +1,3 @@
-import { basePath } from "@/lib/site";
-
 export type Profile = {
   name: string;
   fullName: string;
@@ -28,7 +26,7 @@ export const profile: Profile = {
   email: "baselyosry96@gmail.com",
   github: "https://github.com/Baselyosry",
   linkedin: "https://linkedin.com/in/baselyosry",
-  cvPath: `${basePath}/Basel_Yosry_CV.pdf`,
+  cvPath: "/Basel_Yosry_CV.pdf",
   hero: {
     heading: "Basel Yosry builds backend systems.",
     intro:

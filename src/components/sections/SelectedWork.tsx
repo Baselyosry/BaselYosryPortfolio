@@ -1,3 +1,4 @@
+import { CaseStudyTrigger } from "@/components/sections/CaseStudyTrigger";
 import { Section } from "@/components/sections/Section";
 import { projects } from "@/data/projects";
 
@@ -28,12 +29,9 @@ export function SelectedWork() {
                 <p className="font-mono text-mono text-muted">
                   {project.stack.join(", ")}
                 </p>
-                <button
-                  type="button"
-                  className="w-fit text-small text-text underline decoration-border underline-offset-4 transition-colors duration-[120ms] hover:text-accent hover:decoration-accent"
-                >
+                <CaseStudyTrigger slug={project.slug}>
                   Read the case study
-                </button>
+                </CaseStudyTrigger>
               </div>
             </div>
           </li>

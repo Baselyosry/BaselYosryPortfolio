@@ -1,5 +1,6 @@
 import { CaseStudyTrigger } from "@/components/sections/CaseStudyTrigger";
 import { Section } from "@/components/sections/Section";
+import { caseStudies } from "@/data/caseStudies";
 import { projects } from "@/data/projects";
 
 export function SelectedWork() {
@@ -29,9 +30,11 @@ export function SelectedWork() {
                 <p className="font-mono text-mono text-muted">
                   {project.stack.join(", ")}
                 </p>
-                <CaseStudyTrigger slug={project.slug}>
-                  Read the case study
-                </CaseStudyTrigger>
+                {caseStudies.some((study) => study.slug === project.slug) ? (
+                  <CaseStudyTrigger slug={project.slug}>
+                    Read the case study
+                  </CaseStudyTrigger>
+                ) : null}
               </div>
             </div>
           </li>

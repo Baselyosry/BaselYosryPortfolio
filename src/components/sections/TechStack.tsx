@@ -1,56 +1,7 @@
-import {
-  siAngular,
-  siBetterauth,
-  siClaudecode,
-  siClerk,
-  siConvex,
-  siCplusplus,
-  siCursor,
-  siDotnet,
-  siDrizzle,
-  siExpress,
-  siGit,
-  siGithub,
-  siHono,
-  siJavascript,
-  siNextdotjs,
-  siNodedotjs,
-  siPostman,
-  siPostgresql,
-  siPrisma,
-  siPython,
-  siRider,
-  siTypescript,
-} from "simple-icons";
-
 import { Section } from "@/components/sections/Section";
 import { TechLogo } from "@/components/sections/TechLogo";
 import { skillGroups } from "@/data/skills";
-
-const iconPaths: Record<string, string> = {
-  ".NET": siDotnet.path,
-  TypeScript: siTypescript.path,
-  JavaScript: siJavascript.path,
-  Python: siPython.path,
-  "C++": siCplusplus.path,
-  "Node.js": siNodedotjs.path,
-  Express: siExpress.path,
-  Hono: siHono.path,
-  Clerk: siClerk.path,
-  "Better Auth": siBetterauth.path,
-  Angular: siAngular.path,
-  "Next.js": siNextdotjs.path,
-  PostgreSQL: siPostgresql.path,
-  Prisma: siPrisma.path,
-  DrizzleORM: siDrizzle.path,
-  Convex: siConvex.path,
-  Git: siGit.path,
-  GitHub: siGithub.path,
-  Postman: siPostman.path,
-  Rider: siRider.path,
-  Cursor: siCursor.path,
-  "Claude Code": siClaudecode.path,
-};
+import { techIconPaths } from "@/lib/tech-icons";
 
 export function TechStack() {
   return (
@@ -65,7 +16,7 @@ export function TechStack() {
             <ul className="flex flex-wrap items-center gap-4">
               {group.items.map((item) => (
                 <li key={item}>
-                  <TechLogo name={item} path={iconPaths[item]} />
+                  <TechLogo name={item} path={techIconPaths[item]} />
                 </li>
               ))}
             </ul>

@@ -53,15 +53,15 @@ Dar Al Funoon (bilingual Arabic and English museum and cultural platform built u
 ### TennisFinder
 
 - Kind: graduation project. Year: 2026. CONFIRMED
-- Summary: a multi-sided marketplace for tennis players, court owners, and academies, covering court discovery, player matchmaking, tournaments, and AI-enhanced insights. CONFIRMED (CV)
+- Role: backend lead, overall team lead, and system design and architect. CONFIRMED (Basel, 2026-10-01)
+- Summary: a multi-sided marketplace for tennis players, court owners, and academies, covering court discovery, player matchmaking, tournaments, and AI-enhanced insights. Cross-platform web and mobile. CONFIRMED (CV)
 - Stack: Node.js, Express, TypeScript, Prisma, PostgreSQL, Clerk. CONFIRMED (CV)
-- Architecture decision: led a backend migration from Convex to a custom Node.js and PostgreSQL stack within a one-week window to meet the graduation deadline. CONFIRMED (CV)
-- Core features: geospatial court discovery, conflict-aware reservation scheduling, and AI-driven features for opponent matchmaking, marketplace pricing, and demand forecasting. Integrated Clerk for role-based access control and built an admin dashboard for court approval, invoice tracking, and reporting. CONFIRMED (CV)
-- Case study fields, remaining TODO:
-  - Was it built solo or with a team, and which parts were Basel's?
-  - What was the hardest technical problem beyond the migration, and how was it solved?
-  - How are the AI-enhanced insights produced?
-  - Repo or live link, if public.
+- Architecture decision: the team was not familiar with Convex, so Basel led a migration from Convex to a custom Node.js and PostgreSQL stack within a one-week window to meet the graduation deadline. CONFIRMED (CV, Basel 2026-10-01)
+- Architecture: distributed and service-oriented. A Node.js, Express, and TypeScript backend serves REST APIs, with Prisma, PostgreSQL and PostGIS for geospatial queries, Socket.io for real-time updates, and Clerk for authentication and role-based access control. AI runs in separate Python microservices, and Prometheus and Grafana cover monitoring. Modules: matchmaking, court booking, marketplace, tournaments, notifications, and admin and court owner dashboards. CONFIRMED (Basel's project document, 2026-10-01)
+- Problem: players in Egypt had no unified place to find partners, courts, and equipment, and relied on personal networks and social media groups. Existing apps focused on court booking, club management, or padel matchmaking, and did not cover skill-based tennis matchmaking, location-aware recommendations, or an equipment marketplace. Court owners lacked data on court use and player demand. CONFIRMED (Basel's project document, 2026-10-01)
+- Core features: geospatial court discovery, conflict-aware reservation scheduling, and AI-driven features for opponent matchmaking, marketplace pricing, and demand forecasting. Clerk for role-based access control, and an admin dashboard for court approval, invoice tracking, and reporting. CONFIRMED (CV)
+- AI: separate Python microservices handle player compatibility scoring, price recommendations, marketplace item categorization, and court demand forecasting. Matchmaking uses cosine similarity and ML-based scoring. CONFIRMED (Basel's project document, 2026-10-01)
+- Links: none public. CONFIRMED (Basel, 2026-10-01)
 
 ### MPC (Makkah Park Clinic)
 

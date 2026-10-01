@@ -29,6 +29,21 @@ Spacing: 4px base unit. Section vertical padding `7rem` on desktop, `4.5rem` on 
 
 Contrast check required in Phase 5: muted on bg and accent on bg must pass WCAG AA for body-size text.
 
+### Light theme
+
+Added after the first build, at Basel's request. The page follows the operating system color scheme by default, and a "Light mode" / "Dark mode" button in the navbar and the mobile menu overrides it. The choice is stored in `localStorage`. The dark palette above is the default. The light palette replaces only the six color tokens.
+
+| Token | Light value |
+|---|---|
+| `--color-bg` | `#FAFAF9` |
+| `--color-surface` | `#FFFFFF` |
+| `--color-text` | `#18181B` |
+| `--color-muted` | `#52525B` |
+| `--color-accent` | `#3F5E7F` |
+| `--color-border` | `#D4D4D8` |
+
+The accent stays steel blue, darkened for light backgrounds. The accent rules and radius are unchanged. Contrast on the light background: text `16.9`, muted `7.4`, accent `6.4`, all WCAG AA. A small inline script in the root layout applies a stored theme before the first paint, so there is no flash. When nothing is stored, the OS preference decides.
+
 ## 3. Typography
 
 - Geist Sans for headings and body.
@@ -203,3 +218,4 @@ What was changed from the earlier plan, and why.
 - Restricted JetBrains Mono to the terminal, code, and technology names so it does not become decoration.
 - Added hash links for case studies so a specific project can be shared.
 - Kept the palette exactly as agreed, including `#090909` and `#171717`.
+- Added a light theme (later request). It follows the OS by default and can be overridden with a navbar toggle that persists. The dark palette is unchanged; the six light color tokens are listed in section 2.

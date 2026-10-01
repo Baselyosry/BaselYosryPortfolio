@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { profile } from "@/data/profile";
 
 const links = [
@@ -58,6 +59,9 @@ export function MobileNav() {
               </a>
             </li>
           ))}
+          <li>
+            <ThemeToggle className="block w-full py-2 text-left text-small text-text transition-colors duration-[120ms] hover:text-accent" />
+          </li>
           <li>
             <a
               href={profile.cvPath}

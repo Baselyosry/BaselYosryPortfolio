@@ -43,6 +43,28 @@
     monospace;
 }
 
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-bg: #fafaf9;
+  --color-surface: #ffffff;
+  --color-text: #18181b;
+  --color-muted: #52525b;
+  --color-accent: #3f5e7f;
+  --color-border: #d4d4d8;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --color-bg: #fafaf9;
+    --color-surface: #ffffff;
+    --color-text: #18181b;
+    --color-muted: #52525b;
+    --color-accent: #3f5e7f;
+    --color-border: #d4d4d8;
+  }
+}
+
 @layer base {
   html {
     color-scheme: dark;

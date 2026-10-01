@@ -1,4 +1,5 @@
 import { MobileNav } from "@/components/layout/MobileNav";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { profile } from "@/data/profile";
 
 const links = [
@@ -31,6 +32,8 @@ export function Navbar() {
               ))}
             </ul>
           </nav>
+
+          <ThemeToggle />
 
           <a
             href={profile.cvPath}

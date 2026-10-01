@@ -15,6 +15,7 @@ import {
   terminalTitle,
   type TerminalEntry,
 } from "@/data/terminal";
+import { profile } from "@/data/profile";
 import { commandNames, runCommand } from "@/lib/terminal/commands";
 
 const MAX_INPUT = 120;
@@ -98,7 +99,7 @@ export function Terminal() {
 
     if (result.downloadCv) {
       const link = document.createElement("a");
-      link.href = "/Basel_Yosry_CV.pdf";
+      link.href = profile.cvPath;
       link.download = "";
       document.body.append(link);
       link.click();

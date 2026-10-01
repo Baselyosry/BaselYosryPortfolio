@@ -1,3 +1,5 @@
+export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const fallback = "http://localhost:3000";
 
 export const siteUrl =

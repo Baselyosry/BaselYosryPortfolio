@@ -1,4 +1,5 @@
 import { MobileNav } from "@/components/layout/MobileNav";
+import { profile } from "@/data/profile";
 
 const links = [
   { href: "#about", label: "About" },
@@ -32,7 +33,7 @@ export function Navbar() {
           </nav>
 
           <a
-            href="/Basel_Yosry_CV.pdf"
+            href={profile.cvPath}
             download
             className="inline-flex rounded-control border border-border px-4 py-2 text-small text-text transition-colors duration-[120ms] hover:border-accent hover:text-accent"
           >

@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+import { profile } from "@/data/profile";
+
 const links = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
@@ -58,7 +60,7 @@ export function MobileNav() {
           ))}
           <li>
             <a
-              href="/Basel_Yosry_CV.pdf"
+              href={profile.cvPath}
               download
               onClick={() => setOpen(false)}
               className="block py-2 text-small text-text transition-colors duration-[120ms] hover:text-accent"

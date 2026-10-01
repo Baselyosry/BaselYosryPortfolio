@@ -3,7 +3,7 @@ import { GeistSans } from "geist/font/sans";
 import { JetBrains_Mono } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { siteUrl } from "@/lib/site";
+import { siteUrl, basePath } from "@/lib/site";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "Basel Yosry, backend engineer",
   description:
     "Backend and full-stack engineer in Cairo. I co-founded Tristack, where I build and deploy web platforms for clients in Egypt and Saudi Arabia.",
-  alternates: { canonical: "/" },
+  alternates: { canonical: basePath ? `${basePath}/` : "/" },
   openGraph: {
     type: "website",
     url: "/",

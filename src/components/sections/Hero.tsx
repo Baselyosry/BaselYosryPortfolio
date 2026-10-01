@@ -8,7 +8,7 @@ export function Hero() {
       className="mx-auto w-full max-w-6xl px-[clamp(1.25rem,4vw,2rem)] pb-18 pt-16 md:pb-28 md:pt-24"
     >
       <div className="grid gap-10 md:grid-cols-12 md:gap-12">
-        <div className="flex flex-col items-start gap-6 md:col-span-6">
+        <div className="flex min-w-0 flex-col items-start gap-6 md:col-span-6">
           <h1 id="hero-title" className="text-hero text-text">
             {profile.hero.heading}
           </h1>
@@ -33,7 +33,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="md:col-span-6">
+        <div className="min-w-0 md:col-span-6">
           <Terminal />
         </div>
       </div>

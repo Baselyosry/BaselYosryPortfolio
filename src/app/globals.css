@@ -140,6 +140,14 @@ dialog::backdrop {
     forwards;
 }
 
+@media (max-width: 40rem) {
+  .terminal-typed {
+    white-space: normal;
+    width: auto;
+    animation: none;
+  }
+}
+
 @keyframes terminal-blink {
   0%,
   49% {

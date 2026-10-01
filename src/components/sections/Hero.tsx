@@ -1,3 +1,4 @@
+import { Terminal } from "@/components/terminal/Terminal";
 import { profile } from "@/data/profile";
 
 export function Hero() {
@@ -30,6 +31,10 @@ export function Hero() {
               Download CV
             </a>
           </div>
+        </div>
+
+        <div className="md:col-span-6">
+          <Terminal />
         </div>
       </div>
     </section>

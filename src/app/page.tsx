@@ -4,6 +4,7 @@ import { SelectedWork } from "@/components/sections/SelectedWork";
 import { Experience } from "@/components/sections/Experience";
 import { TechStack } from "@/components/sections/TechStack";
 import { Contact } from "@/components/sections/Contact";
+import { CaseStudyDialog } from "@/components/sections/CaseStudyDialog";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Experience />
       <TechStack />
       <Contact />
+      <CaseStudyDialog />
     </>
   );
 }

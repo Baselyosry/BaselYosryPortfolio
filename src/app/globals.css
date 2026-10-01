@@ -83,3 +83,30 @@
     }
   }
 }
+
+dialog {
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 100ms ease,
+    transform 100ms ease,
+    overlay 100ms ease allow-discrete,
+    display 100ms ease allow-discrete;
+}
+
+dialog[open] {
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: 150ms;
+}
+
+@starting-style {
+  dialog[open] {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.7);
+}

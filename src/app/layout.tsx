@@ -3,6 +3,7 @@ import { GeistSans } from "geist/font/sans";
 import { JetBrains_Mono } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -12,9 +13,26 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Basel Yosry, backend engineer",
   description:
     "Backend and full-stack engineer in Cairo. I co-founded Tristack, where I build and deploy web platforms for clients in Egypt and Saudi Arabia.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "Basel Yosry",
+    title: "Basel Yosry, backend engineer",
+    description:
+      "Backend and full-stack engineer in Cairo. I co-founded Tristack, where I build and deploy web platforms for clients in Egypt and Saudi Arabia.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Basel Yosry, backend engineer",
+    description:
+      "Backend and full-stack engineer in Cairo. I co-founded Tristack, where I build and deploy web platforms for clients in Egypt and Saudi Arabia.",
+  },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

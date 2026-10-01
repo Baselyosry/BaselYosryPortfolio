@@ -1,3 +1,5 @@
+import { MobileNav } from "@/components/layout/MobileNav";
+
 const links = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
@@ -13,28 +15,32 @@ export function Navbar() {
           Basel Yosry
         </span>
 
-        <nav aria-label="Primary" className="hidden md:block">
-          <ul className="flex items-center gap-6">
-            {links.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="text-small text-text transition-colors duration-[120ms] hover:text-accent"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <div className="hidden items-center gap-6 md:flex">
+          <nav aria-label="Primary">
+            <ul className="flex items-center gap-6">
+              {links.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-small text-text transition-colors duration-[120ms] hover:text-accent"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-        <a
-          href="/Basel_Yosry_CV.pdf"
-          download
-          className="hidden rounded-control border border-border px-4 py-2 text-small text-text transition-colors duration-[120ms] hover:border-accent hover:text-accent md:inline-flex"
-        >
-          Download CV
-        </a>
+          <a
+            href="/Basel_Yosry_CV.pdf"
+            download
+            className="inline-flex rounded-control border border-border px-4 py-2 text-small text-text transition-colors duration-[120ms] hover:border-accent hover:text-accent"
+          >
+            Download CV
+          </a>
+        </div>
+
+        <MobileNav />
       </div>
     </header>
   );

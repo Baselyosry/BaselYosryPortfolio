@@ -1,5 +1,6 @@
 "use client";
 
+import { Moon, Sun } from "lucide-react";
 import { useLayoutEffect, useSyncExternalStore } from "react";
 
 type Theme = "light" | "dark";
@@ -23,7 +24,9 @@ function getServerSnapshot(): Theme {
 function subscribe(callback: () => void) {
   const media = window.matchMedia("(prefers-color-scheme: light)");
   const observer = new MutationObserver(callback);
-  observer.observe(document.documentElement, { attributeFilter: ["data-theme"] });
+  observer.observe(document.documentElement, {
+    attributeFilter: ["data-theme"],
+  });
   media.addEventListener("change", callback);
   return () => {
     observer.disconnect();
@@ -31,7 +34,7 @@ function subscribe(callback: () => void) {
   };
 }
 
-export function ThemeToggle({ className }: { className?: string }) {
+export function ThemeToggle() {
   const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   // Re-apply the stored theme after React's development remount clears the attribute.
@@ -56,13 +59,16 @@ export function ThemeToggle({ className }: { className?: string }) {
     <button
       type="button"
       onClick={toggle}
-      aria-label="Switch color theme"
-      className={
-        className ??
-        "text-small text-text transition-colors duration-[120ms] hover:text-accent"
+      aria-label={
+        theme === "light" ? "Switch to dark mode" : "Switch to light mode"
       }
+      className="inline-flex h-9 w-9 items-center justify-center rounded-control border border-border text-text transition-colors duration-[120ms] hover:border-accent hover:text-accent"
     >
-      {theme === "light" ? "Dark mode" : "Light mode"}
+      {theme === "light" ? (
+        <Moon size={16} aria-hidden />
+      ) : (
+        <Sun size={16} aria-hidden />
+      )}
     </button>
   );
 }

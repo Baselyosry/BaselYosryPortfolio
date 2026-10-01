@@ -31,7 +31,7 @@ Contrast check required in Phase 5: muted on bg and accent on bg must pass WCAG 
 
 ### Light theme
 
-Added after the first build, at Basel's request. The page follows the operating system color scheme by default, and a "Light mode" / "Dark mode" button in the navbar and the mobile menu overrides it. The choice is stored in `localStorage`. The dark palette above is the default. The light palette replaces only the six color tokens.
+Added after the first build, at Basel's request. The page follows the operating system color scheme by default, and an icon toggle (sun and moon) in the navbar and the mobile menu overrides it. The choice is stored in `localStorage`. The dark palette above is the default. The light palette replaces only the six color tokens.
 
 | Token | Light value |
 |---|---|

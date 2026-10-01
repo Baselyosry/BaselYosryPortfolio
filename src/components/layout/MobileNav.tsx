@@ -60,7 +60,7 @@ export function MobileNav() {
             </li>
           ))}
           <li>
-            <ThemeToggle className="block w-full py-2 text-left text-small text-text transition-colors duration-[120ms] hover:text-accent" />
+            <ThemeToggle />
           </li>
           <li>
             <a

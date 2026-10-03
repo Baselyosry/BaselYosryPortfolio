@@ -89,6 +89,10 @@ export function CaseStudyDialog() {
   }, [slug]);
 
   const handleClose = () => {
+    const dialog = dialogRef.current;
+    if (dialog?.open) {
+      dialog.close();
+    }
     setSlug(null);
     if (window.location.hash) {
       window.history.replaceState(
@@ -111,7 +115,7 @@ export function CaseStudyDialog() {
           <div className="flex justify-end border-b border-border px-6 py-4">
             <button
               type="button"
-              onClick={() => dialogRef.current?.close()}
+              onClick={handleClose}
               className="rounded-control border border-border px-3 py-1.5 text-small text-text transition-colors duration-[120ms] hover:border-accent hover:text-accent"
             >
               Close

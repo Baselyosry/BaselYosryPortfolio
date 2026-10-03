@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import { TechLogo } from "@/components/sections/TechLogo";
-import { caseStudies } from "@/data/caseStudies";
+import { caseStudies, type CaseStudyHighlight } from "@/data/caseStudies";
 import { techIconPaths } from "@/lib/tech-icons";
 
 function slugFromLocation(): string | null {
@@ -15,8 +15,35 @@ function CaseSection({ title, children }: { title: string; children: ReactNode }
   return (
     <section className="mt-8">
       <h3 className="text-small font-semibold text-text">{title}</h3>
-      <div className="mt-2 flex flex-col gap-3">{children}</div>
+      <div className="mt-3 flex flex-col gap-3">{children}</div>
     </section>
+  );
+}
+
+function Paragraphs({ lines }: { lines: string[] }) {
+  return (
+    <>
+      {lines.map((line) => (
+        <p key={line} className="max-w-[62ch] text-body text-text">
+          {line}
+        </p>
+      ))}
+    </>
+  );
+}
+
+function HighlightList({ highlights }: { highlights: CaseStudyHighlight[] }) {
+  return (
+    <ul className="flex flex-col gap-5">
+      {highlights.map((highlight) => (
+        <li key={highlight.title}>
+          <p className="text-body font-semibold text-text">{highlight.title}</p>
+          <p className="mt-1 max-w-[62ch] text-body text-muted">
+            {highlight.body}
+          </p>
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -120,28 +147,37 @@ export function CaseStudyDialog() {
               ) : null}
 
               {study.architecture ? (
-                <CaseSection title="Architecture and key decisions">
+                <CaseSection title="System architecture">
                   <p className="text-body text-text">{study.architecture}</p>
+                </CaseSection>
+              ) : null}
+
+              {study.highlights?.length ? (
+                <CaseSection title="Engineering highlights">
+                  <HighlightList highlights={study.highlights} />
                 </CaseSection>
               ) : null}
 
               {study.contributions?.length ? (
                 <CaseSection title="What I built">
-                  {study.contributions.map((line) => (
-                    <p key={line} className="text-body text-text">
-                      {line}
+                  <Paragraphs lines={study.contributions} />
+                  {study.collaboration ? (
+                    <p className="max-w-[62ch] text-small text-muted">
+                      {study.collaboration}
                     </p>
-                  ))}
+                  ) : null}
                 </CaseSection>
               ) : null}
 
               {study.challenges?.length ? (
                 <CaseSection title="Challenges and how they were solved">
-                  {study.challenges.map((line) => (
-                    <p key={line} className="text-body text-text">
-                      {line}
-                    </p>
-                  ))}
+                  <Paragraphs lines={study.challenges} />
+                </CaseSection>
+              ) : null}
+
+              {study.decisions?.length ? (
+                <CaseSection title="Technical decisions">
+                  <Paragraphs lines={study.decisions} />
                 </CaseSection>
               ) : null}
 
@@ -158,6 +194,12 @@ export function CaseStudyDialog() {
                   ))}
                 </ul>
               </CaseSection>
+
+              {study.status ? (
+                <CaseSection title="Project status">
+                  <p className="text-body text-text">{study.status}</p>
+                </CaseSection>
+              ) : null}
 
               {study.links?.length ? (
                 <CaseSection title="Links">

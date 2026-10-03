@@ -19,11 +19,12 @@ export const skillGroups: SkillGroup[] = [
       "Hono",
       "Clerk",
       "Better Auth",
+      "Supabase",
     ],
   },
   {
     group: "Frontend",
-    items: ["Angular", "Next.js"],
+    items: ["Angular", "React", "Next.js", "Tailwind CSS"],
   },
   {
     group: "Databases and ORM",

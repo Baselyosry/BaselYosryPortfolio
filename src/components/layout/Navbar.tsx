@@ -13,7 +13,8 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-bg">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-6 px-[clamp(1.25rem,4vw,2rem)]">
-        <span className="text-body font-semibold tracking-tight text-text">
+        <span className="flex items-center gap-2 text-body font-semibold tracking-tight text-text">
+          <span aria-hidden className="logo-mark h-6 w-5" />
           Basel Yosry
         </span>
 

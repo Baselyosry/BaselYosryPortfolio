@@ -31,7 +31,7 @@ export const profile: Profile = {
     heading: "Basel Yosry builds backend systems.",
     intro:
       "Backend and full-stack engineer in Cairo. I co-founded Tristack, where I build and deploy web platforms for clients in Egypt and Saudi Arabia.",
-    technologies: ["C#", "TypeScript", "Node.js", "PostgreSQL"],
+    technologies: ["C#", ".NET", "TypeScript", "Node.js", "PostgreSQL"],
   },
   about: {
     paragraphs: [

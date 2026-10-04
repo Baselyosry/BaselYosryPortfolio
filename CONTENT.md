@@ -34,7 +34,7 @@ Hero heading:
 Hero intro:
 > Backend and full-stack engineer in Cairo. I co-founded Tristack, where I build and deploy web platforms for clients in Egypt and Saudi Arabia.
 
-Hero technology line (plain text): C#, TypeScript, Node.js, PostgreSQL.
+Hero technology line (plain text): C#, .NET, TypeScript, Node.js, PostgreSQL.
 
 About, paragraph 1:
 > I graduated in Computer Science from MUST in 2026. Most of my work is backend: designing the data model, the API, and the deployment, then keeping it running.

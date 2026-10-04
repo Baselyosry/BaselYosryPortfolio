@@ -4,8 +4,9 @@ import { profile } from "@/data/profile";
 export function Hero() {
   return (
     <section
+      id="hero"
       aria-labelledby="hero-title"
-      className="mx-auto w-full max-w-6xl px-[clamp(1.25rem,4vw,2rem)] pb-18 pt-16 md:pb-28 md:pt-24"
+      className="mx-auto w-full max-w-6xl scroll-mt-16 px-[clamp(1.25rem,4vw,2rem)] pb-18 pt-16 md:pb-28 md:pt-24"
     >
       <div className="grid gap-10 md:grid-cols-12 md:gap-12">
         <div className="flex min-w-0 flex-col items-start gap-6 md:col-span-6">

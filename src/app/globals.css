@@ -116,6 +116,10 @@
   }
 }
 
+html[data-js="true"] .case-study-inline {
+  display: none;
+}
+
 dialog {
   opacity: 0;
   transform: translateY(8px);
